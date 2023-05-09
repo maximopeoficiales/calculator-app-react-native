@@ -1,18 +1,19 @@
 import { colorButtons } from '../theme/appTheme';
-import { ButtonCalc } from './ButtonCalc';
+import { BtnCalc } from './ButtonCalc';
 
 interface MyPropsCalc {
   text: string;
+  action: (numberText: string) => void;
 }
-export const BtnOperation = ({ text }: MyPropsCalc) => {
+export const BtnOperation = ({ text, action }: MyPropsCalc) => {
   return (
-    <ButtonCalc text={text} color={colorButtons.orange} />
+    <BtnCalc text={text} color={colorButtons.orange} action={action} />
   )
 }
 
-export const BtnAction = ({ text }: MyPropsCalc) => {
+export const BtnAction = ({ text, action }: MyPropsCalc) => {
   return (
-    <ButtonCalc text={text} color={colorButtons.gray} />
+    <BtnCalc text={text} color={colorButtons.gray} action={action} />
   )
 }
 
